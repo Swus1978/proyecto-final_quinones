@@ -1,0 +1,110 @@
+[
+    {
+        "images": "images/images.jpeg",
+        "code": "00666",
+        "name": "Corn",
+        "price": 100
+    },
+    {
+        "images": "images/images (3).jpeg",
+        "code": "00211",
+        "name": "Ginger",
+        "price": 50
+    },
+    {
+        "images": "images/images (2).jpeg",
+        "code": "00431",
+        "name": "Leaf Lettuce",
+        "price": 100
+    },
+    {
+        "images": "images/images (1).jpeg",
+        "code": "00422",
+        "name": "Sweet Potatoes",
+        "price": 150
+    },
+    {
+        "images": "images/descarga.jpeg",
+        "code": "00423",
+        "name": "Cucumber",
+        "price": 120
+    },
+    {
+        "images": "images/descarga (8).jpeg",
+        "code": "00424",
+        "name": "Artichoke",
+        "price": 100
+    },
+    {
+        "images": "images/descarga (7).jpeg",
+        "code": "00425",
+        "name": "Avocado",
+        "price": 90
+    },
+    {
+        "images": "images/descarga (6).jpeg",
+        "code": "00426",
+        "name": "Red Bell Pepper",
+        "price": 100
+    },
+    {
+        "images": "images/descarga (5).jpeg",
+        "code": "00427",
+        "name": "Brocoli",
+        "price": 100
+    },
+    {
+        "images": "images/descarga (4).jpeg",
+        "code": "00421",
+        "name": "Pumpkin",
+        "price": 10
+    },
+    {
+        "images": "images/descarga (3).jpeg",
+        "code": "00420",
+        "name": "Green Bell Pepper",
+        "price": 120
+    },
+    {
+        "images": "images/descarga (2).jpeg",
+        "code": "00429",
+        "name": "Tomatoes",
+        "price": 150
+    },
+    {
+        "images": "images/asparagus.jpeg",
+        "code": "00458",
+        "name": "Asparagus",
+        "price": 100
+    },
+    {
+        "images": "images/carrot.jpeg",
+        "code": "00468",
+        "name": "Carrot",
+        "price": 100
+    },
+    {
+        "images": "images/garlic.jpeg",
+        "code": "00478",
+        "name": "Garlic",
+        "price": 100
+    },
+    {
+        "images": "images/potatoes.jpeg",
+        "code": "00218",
+        "name": "Potatoes",
+        "price": 100
+    },
+    {
+        "images": "images/spinash.jpeg",
+        "code": "00528",
+        "name": "Spinach",
+        "price": 100
+    },
+    {
+        "images": "images/yellow-onion.jpeg",
+        "code": "00828",
+        "name": "Yellow Onions",
+        "price": 100
+    }
+]
