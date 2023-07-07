@@ -30,7 +30,7 @@ function createCardElement(product) {
         <div class="name"><p class="card-title">${product.name}</p></div>
         <div class="price"><p class="card-text">$ ${product.price}</p></div>
         <div class="buy mb-2 mt-3">
-          <button class="btn btn-primary" id="${product.code}">Add to Cart</button>
+          <button class="btn btn-primary btn-sm" id="${product.code}">Add to Cart</button>
         </div>
       </div>
     </div>`;
