@@ -34,6 +34,14 @@ function renderCart() {
 // Function to handle the click event on the delete button
 function handleDeleteCard(e) {
   const code = e.target.dataset.code;
+  Swal.fire({
+    icon: 'success',
+    title: 'Item deleted successfully',
+    text: 'Item removed from cart successfully',
+    showConfirmButton: false, // Hide the 'OK' button
+    timer: 3000, // Automatically close the popup after 3 seconds (adjust as needed)
+    timerProgressBar: true // Show a progress bar indicating the remaining time
+  })
 
   // Find the index of the item with the matching code in the shoppingCart array
   const itemIndex = shoppingCart.findIndex((item) => item.code === code);
