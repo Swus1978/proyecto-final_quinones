@@ -39,7 +39,7 @@ function handleDeleteCard(e) {
     title: 'Item deleted successfully',
     text: 'Item removed from cart successfully',
     showConfirmButton: false, // Hide the 'OK' button
-    timer: 3000, // Automatically close the popup after 3 seconds (adjust as needed)
+    timer: 2000, // Automatically close the popup after 3 seconds (adjust as needed)
     timerProgressBar: true // Show a progress bar indicating the remaining time
   })
 
@@ -55,9 +55,6 @@ function handleDeleteCard(e) {
 
     // Re-render the cart
     renderCart();
-
-    // Show a success message using Toastr
-    toastr.success('Item removed', 'The item has been successfully removed from the cart.');
   }
 }
 
@@ -81,7 +78,7 @@ function handlePurchase() {
     title: 'Purchase Successful',
     text: 'Thank you for your purchase!',
     showConfirmButton: false, // Hide the 'OK' button
-    timer: 3000, // Automatically close the popup after 3 seconds (adjust as needed)
+    timer: 2000, // Automatically close the popup after 3 seconds (adjust as needed)
     timerProgressBar: true // Show a progress bar indicating the remaining time
   }).then(() => {
     localStorage.removeItem('cart');

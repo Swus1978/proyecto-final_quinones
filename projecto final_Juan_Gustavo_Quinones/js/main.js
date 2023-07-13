@@ -51,7 +51,7 @@ function activateAllButtonsClick(items) { // Receive the items array as a parame
                 title: 'Added to Cart',
                 text: `The product ${chosenItems.name} has been successfully added to the cart.`,
                 showConfirmButton: false, // Hide the 'OK' button
-                timer: 3000, // Automatically close the popup after 3 seconds (adjust as needed)
+                timer: 2000, // Automatically close the popup after 3 seconds (adjust as needed)
                 timerProgressBar: true // Show a progress bar indicating the remaining time
             });
 
