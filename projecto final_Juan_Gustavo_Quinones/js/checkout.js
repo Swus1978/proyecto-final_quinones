@@ -1,29 +1,14 @@
-// Function to load cart items from localStorage
-function loadCartItems() {
-  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-  return cartItems;
-}
-
-// Function to save cart items to localStorage
-function saveCartItems(cartItems) {
-  localStorage.setItem('cart', JSON.stringify(cartItems));
-}
-
 // Function to calculate the total price of the cart items
-function calculateTotal(cartItems) {
-  let total = 0;
-  cartItems.forEach((item) => {
-    total += item.price;
-  });
-  return total;
+function calculateTotal() {
+  return shoppingCart.reduce((total, item) => total + item.price, 0);
 }
 
 // Function to render the cart table
-function renderCart(cartItems) {
+function renderCart() {
   const tbody = document.querySelector('tbody');
   tbody.innerHTML = '';
 
-  cartItems.forEach((item) => {
+  shoppingCart.forEach((item) => {
     const tr = document.createElement('tr');
     const nameTd = document.createElement('td');
     nameTd.textContent = item.name;
@@ -41,49 +26,65 @@ function renderCart(cartItems) {
     tbody.appendChild(tr);
   });
 
-  const total = calculateTotal(cartItems);
+  const total = calculateTotal();
   const totalElement = document.getElementById('total');
   totalElement.textContent = `Total: $ ${total.toFixed(2)}`;
 }
 
 // Function to handle the click event on the delete button
-function handleDeleteButton(e, cartItems) {
+function handleDeleteCard(e) {
   const code = e.target.dataset.code;
 
-  // Find the index of the item with the matching code in the cartItems array
-  const itemIndex = cartItems.findIndex((item) => item.code === code);
+  // Find the index of the item with the matching code in the shoppingCart array
+  const itemIndex = shoppingCart.findIndex((item) => item.code === code);
 
   if (itemIndex !== -1) {
-    // Remove the item from the cartItems array
-    cartItems.splice(itemIndex, 1);
+    // Remove the item from the shoppingCart array
+    shoppingCart.splice(itemIndex, 1);
 
     // Save the updated cart items to localStorage
-    saveCartItems(cartItems);
+    saveCartItems();
 
     // Re-render the cart
-    renderCart(cartItems);
+    renderCart();
 
-    // Show a success message
-    Swal.fire({
-      icon: 'success',
-      title: 'Item removed',
-      text: 'The item has been successfully removed from the cart.',
-    });
+    // Show a success message using Toastr
+    toastr.success('Item removed', 'The item has been successfully removed from the cart.');
   }
 }
 
-// Retrieve the cart items from localStorage
-const cartItems = loadCartItems();
+// Retrieve the cart items from local storage or initialize an empty array
+const shoppingCart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Render the cart on page load
-renderCart(cartItems);
+// Render the initial cart
+renderCart();
 
 // Add event listener to the delete button
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('delete')) {
-    handleDeleteButton(e, cartItems);
+    handleDeleteCard(e);
   }
 });
+
+// Function to handle the click event on the purchase button
+function handlePurchase() {
+  Swal.fire({
+    icon: 'success',
+    title: 'Purchase Successful',
+    text: 'Thank you for your purchase!',
+    showConfirmButton: false, // Hide the 'OK' button
+    timer: 3000, // Automatically close the popup after 3 seconds (adjust as needed)
+    timerProgressBar: true // Show a progress bar indicating the remaining time
+  }).then(() => {
+    localStorage.removeItem('cart');
+    shoppingCart.length = 0;
+    renderCart();
+  });
+}
+
+// Add event listener to the purchase button
+const purchaseButton = document.getElementById('purchaseButton');
+purchaseButton.addEventListener('click', handlePurchase);
 
 
 
